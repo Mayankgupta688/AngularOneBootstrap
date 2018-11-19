@@ -3,11 +3,125 @@
 <html>
     <head>
         <title>Angular One Bootstrap</title>
+        <link rel="stylesheet" type="text/css" href="./css/styles.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.js"></script>
     </head>
     <body ng-app="testModule">
+        <div ng-controller="testController" class="column_configurator">
+            
+            <div class="layout_info">
+                <div>
+                    <p>Layout Name</p>
+                    <input type="text" />
+                </div>
+                <div class="checkbox_input">
+                    <span><input type="checkbox"> Default Layout</span>
+                    <input type="checkbox"> Shared
+                </div>
+            </div>
+            
+            <div class="result_page_info">
+                <div>
+                    <p>Result Per Page</p>
+                    <input type="text" />
+                </div>
+            </div>
 
-        <div ng-controller="testController">Hello {{name}}. This is Demo Application..</div>
+            <div class="default_report">
+                <div>
+                    <p>Default Report</p>
+                    <select>
+                        <option>Account Detail Report</option>
+                        <option>Other Detail Report</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="define_columns">
+                <div class="available_columns">
+                    <p><b>Available Columns</b></p>
+                    <div class="available_column_details">
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                        <div>Test Column</div>
+                    </div>
+                </div>
+                <div class="movement-buttons">
+                    <p><b></b></p>
+                    <div class="column-button-container">
+                        <input type="button" value=">>" />
+                        <input type="button" value=">" />
+                        <input type="button" value="<" />
+                        <input type="button" value="<<" />
+                        <input type="button" style="transform: rotate(90deg);" value="<" />
+                        <input type="button" style="transform: rotate(90deg);" value=">" />
+                    </div>
+                </div>
+                <div class="required_column">
+                    <p><b>Required Columns</b></p>
+                    <div class="required_column_details">
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                            <div>Test Column</div>
+                    </div>
+                </div>
+                <div class="column_data">
+                    <p><b>Column Properties:</b></p>
+                    <div class="column_data_row">
+                        <p>Column Width</p>   
+                        <input type="number" value="1" />
+                    </div>
+                    
+                    <div class="column_data_row">
+                        <p>Column Width</p>   
+                        <input type="checkbox" value="1" />
+                    </div>
+
+                    <div class="column_data_row">
+                        <p>Test Data:</p>   
+                        <select>
+                            <option>Ascending</option>
+                            <option>Descending</option>
+                        </select>
+                    </div>
+                       
+                </div>
+            </div><br><br>
+        
+            <div class="button-container">
+                <input type="button" value="Cancel" />
+                <input type="button" value="Delete" />
+                <input type="button" value="Save As" />
+                <input type="button" value="Save" />
+            </div>
+        </div>
+
 
         <script src="./scripts/index.js"></script>
 

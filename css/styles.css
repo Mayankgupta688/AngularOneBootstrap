@@ -1,0 +1,115 @@
+.column_configurator {
+    width: 800px;
+    border: 1px solid red;
+    margin: auto;
+    padding: 20px;
+}
+
+.layout_info {
+    display: flex;
+    flex-direction: row;
+}
+
+.layout_info div {
+    flex-grow: 1;
+    vertical-align: middle;
+}
+
+.layout_info .checkbox_input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.layout_info span {
+    padding-right: 20px;
+}
+
+.layout_info p, .result_page_info p, .default_report p {
+    width: 120px;
+    display: inline-block;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    padding-right: 10px;
+}
+
+.button-container input {
+    margin: 2px;
+}
+
+.define_columns {
+    display: flex;
+    flex-direction: row;
+}
+
+.available_columns, .required_column, .column_details, .movement-buttons, .column_data {
+    flex-grow: 1;
+}
+
+.required_column_details, .available_column_details {
+    width: 180px;
+    height: 250px;
+    border: 1px solid red;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.available_column_details div, .required_column_details div {
+    height: 30px;
+    width: 100%;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.available_column_details div:hover, .required_column_details div:hover {
+    background-color: #9898f9 !important;
+}
+
+.available_column_details div:nth-child(odd), .required_column_details div:nth-child(odd) {
+    background-color: #a2a29b;
+}
+
+.available_column_details div:nth-child(even), .required_column_details div:nth-child(even) {
+    background-color: #bbb9b9;
+}
+
+.movement-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.movement-buttons input {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 5px;
+} 
+
+.column_data .column_data_row p {
+    display: inline-block;
+    width: 100px;
+}
+
+.column_data .column_data_row input[type=number] {
+    width: 40px;
+}
+
+.column_data .column_data_row {
+    height: 35px;
+}
+
+.column-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    margin-top: 60px;
+}
