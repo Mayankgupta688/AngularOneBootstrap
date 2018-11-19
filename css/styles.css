@@ -1,3 +1,7 @@
+.layout_info, .result_page_info, .default_report {
+    height: 40px;
+}
+
 .column_configurator {
     width: 800px;
     border: 1px solid red;
@@ -93,7 +97,7 @@
 
 .column_data .column_data_row p {
     display: inline-block;
-    width: 100px;
+    width: 110px;
 }
 
 .column_data .column_data_row input[type=number] {
