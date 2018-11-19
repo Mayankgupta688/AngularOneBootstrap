@@ -1,0 +1,52 @@
+{
+    "columnData": [{
+        "fieldName": "Test Field",
+        "isVisible": true,
+        "includeInSearch": false,
+        "sortOrder": 1,
+        "sortDirection": true,
+        "displayOrder": 1
+    }, {
+        "fieldName": "Custom Field",
+        "isVisible": true,
+        "includeInSearch": false,
+        "sortOrder": 2,
+        "sortDirection": true,
+        "displayOrder": 2
+    }, {
+        "fieldName": "Other Field",
+        "isVisible": false,
+        "includeInSearch": false,
+        "sortOrder": 3,
+        "sortDirection": true,
+        "displayOrder": 3
+    }, {
+        "fieldName": "Data Field",
+        "isVisible": false,
+        "includeInSearch": false,
+        "sortOrder": 4,
+        "sortDirection": true,
+        "displayOrder": 4
+    }, {
+        "fieldName": "Number Field",
+        "isVisible": true,
+        "includeInSearch": false,
+        "sortOrder": 5,
+        "sortDirection": true,
+        "displayOrder": 5
+    }, {
+        "fieldName": "String Field",
+        "isVisible": true,
+        "includeInSearch": false,
+        "sortOrder": 6,
+        "sortDirection": true,
+        "displayOrder": 6
+    }, {
+        "fieldName": "Date Field",
+        "isVisible": true,
+        "includeInSearch": false,
+        "sortOrder": 7,
+        "sortDirection": true,
+        "displayOrder": 7
+    }]
+}
