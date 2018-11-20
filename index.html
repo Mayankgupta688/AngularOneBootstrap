@@ -41,31 +41,19 @@
                 <div class="available_columns">
                     <p><b>Available Columns</b></p>
                     <div class="available_column_details">
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
-                        <div>Test Column</div>
+                        <div ng-repeat="availableArr in availableArray" 
+                             ng-bind="availableArr.fieldName" 
+                             ng-class="availableArr.isSelected ? 'selectedColumn' : ''" 
+                             ng-click="selectedElement(availableArray[$index])"></div>
                     </div>
                 </div>
                 <div class="movement-buttons">
                     <p><b></b></p>
                     <div class="column-button-container">
-                        <input type="button" value=">>" />
-                        <input type="button" value=">" />
-                        <input type="button" value="<" />
-                        <input type="button" value="<<" />
+                        <input type="button" value=">>" ng-click="moveAllToRequired()" />
+                        <input type="button" value=">" ng-click="moveColumnToRequired()" />
+                        <input type="button" value="<" ng-click="moveColumnToAvailable()" />
+                        <input type="button" value="<<" ng-click="moveAllToAvailable()" />
                         <input type="button" style="transform: rotate(90deg);" value="<" />
                         <input type="button" style="transform: rotate(90deg);" value=">" />
                     </div>
@@ -73,22 +61,9 @@
                 <div class="required_column">
                     <p><b>Required Columns</b></p>
                     <div class="required_column_details">
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
-                            <div>Test Column</div>
+                            <div ng-repeat="reqArr in requiredArray" ng-bind="reqArr.fieldName"
+                                 ng-class="reqArr.isSelected ? 'selectedColumn' : ''" 
+                                 ng-click="selectedElement(requiredArray[$index])"></div>
                     </div>
                 </div>
                 <div class="column_data">
