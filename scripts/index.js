@@ -158,4 +158,14 @@ testModule.controller("testController", function($scope, $http) {
     $scope.moveColumnsDown = function() {
         alert("Move Down");
     }
+
+    $scope.saveJsonData = function() {
+        console.dir({
+            layoutName: $scope.layoutName,
+            resultPerPage: $scope.resultPerPage,
+            defaultReport: $scope.defaultReport,
+            isShared: $scope.isShared,
+            isDefault: $scope.isDefault
+        });
+    }
 });

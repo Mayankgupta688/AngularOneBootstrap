@@ -15,8 +15,8 @@
                     <input type="text" ng-model="layoutName" />
                 </div>
                 <div class="checkbox_input">
-                    <span><input type="checkbox" ng-checked="isDefault"> Default Layout</span>
-                    <input type="checkbox" ng-checked="isShared"> Shared
+                    <span><input type="checkbox" ng-model="isDefault"> Default Layout</span>
+                    <input type="checkbox" ng-model="isShared"> Shared
                 </div>
             </div>
             
@@ -102,7 +102,7 @@
                 <input type="button" value="Cancel" />
                 <input type="button" value="Delete" />
                 <input type="button" value="Save As" />
-                <input type="button" value="Save" />
+                <input type="button" value="Save" ng-click="saveJsonData()" />
             </div>
         </div>
 
