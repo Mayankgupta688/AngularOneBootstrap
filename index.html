@@ -12,27 +12,27 @@
             <div class="layout_info">
                 <div>
                     <p>Layout Name</p>
-                    <input type="text" />
+                    <input type="text" ng-model="layoutName" />
                 </div>
                 <div class="checkbox_input">
-                    <span><input type="checkbox"> Default Layout</span>
-                    <input type="checkbox"> Shared
+                    <span><input type="checkbox" ng-checked="isDefault"> Default Layout</span>
+                    <input type="checkbox" ng-checked="isShared"> Shared
                 </div>
             </div>
             
             <div class="result_page_info">
                 <div>
                     <p>Result Per Page</p>
-                    <input type="text" />
+                    <input type="text" ng-model="resultPerPage" />
                 </div>
             </div>
 
             <div class="default_report">
                 <div>
                     <p>Default Report</p>
-                    <select>
-                        <option>Account Detail Report</option>
-                        <option>Other Detail Report</option>
+                    <select ng-model="defaultReport">
+                        <option value="accountDetailReport">Account Detail Report</option>
+                        <option value="otherDetailReport">Other Detail Report</option>
                     </select>
                 </div>
             </div>
@@ -54,8 +54,8 @@
                         <input type="button" value=">" ng-click="moveColumnToRequired()" />
                         <input type="button" value="<" ng-click="moveColumnToAvailable()" />
                         <input type="button" value="<<" ng-click="moveAllToAvailable()" />
-                        <input type="button" style="transform: rotate(90deg);" value="<" />
-                        <input type="button" style="transform: rotate(90deg);" value=">" />
+                        <input type="button" style="transform: rotate(90deg);" value="<" ng-click="moveColumnsUp()"/>
+                        <input type="button" style="transform: rotate(90deg);" value=">" ng-click="moveColumnsDown()"/>
                     </div>
                 </div>
                 <div class="required_column">
@@ -70,28 +70,28 @@
                     <p><b>Column Properties:</b></p>
                     <div class="column_data_row">
                         <p>Sort Order:</p>   
-                        <input type="number" value="1" />
+                        <input type="number" ng-model="selectedColumnInfo.displayOrder" />
                     </div>
                     
                     <div class="column_data_row">
                         <p>Included in Search</p>   
-                        <input type="checkbox" value="1" />
+                        <input type="checkbox" ng-checked="selectedColumnInfo.includeInSearch" />
                     </div>
 
                     <div class="column_data_row">
                         <p>Sort Direction:</p>   
-                        <select>
-                            <option>Ascending</option>
-                            <option>Descending</option>
+                        <select ng-model="selectedColumnInfo.sortDirection">
+                            <option value="1">Ascending</option>
+                            <option value="0">Descending</option>
                         </select>
                     </div>
 
                     <div class="column_data_row">
                         <p>Text Justification:</p>   
-                        <select>
-                            <option>Right</option>
-                            <option>Left</option>
-                            <option>Center</option>
+                        <select ng-model="selectedColumnInfo.textAlignment">
+                            <option value="right">Right</option>
+                            <option value="left">Left</option>
+                            <option value="center">Center</option>
                         </select>
                     </div>
                        

@@ -3,66 +3,93 @@ var testModule = angular.module("testModule", []);
 testModule.controller("testController", function($scope, $http) {
     $scope.availableArray = [];
     $scope.requiredArray = [];
+    $scope.selectedColumnInfo = null;
+    $scope.layoutName = "";
+    $scope.resultPerPage = 0;
+    $scope.defaultReport = "";
+    $scope.isShared = false;
+    $scope.isDefault = false;
+    
 
 
-    var incomingData = [{
-        "fieldName": "Test Field",
-        "isVisible": true,
-        "includeInSearch": false,
-        "sortOrder": 1,
-        "sortDirection": true,
-        "displayOrder": 1
-    }, {
-        "fieldName": "Custom Field",
-        "isVisible": true,
-        "includeInSearch": false,
-        "sortOrder": 2,
-        "sortDirection": true,
-        "displayOrder": 2
-    }, {
-        "fieldName": "Other Field",
-        "isVisible": false,
-        "includeInSearch": false,
-        "sortOrder": 3,
-        "sortDirection": true,
-        "displayOrder": 3
-    }, {
-        "fieldName": "Data Field",
-        "isVisible": false,
-        "includeInSearch": false,
-        "sortOrder": 4,
-        "sortDirection": true,
-        "displayOrder": 4
-    }, {
-        "fieldName": "Number Field",
-        "isVisible": true,
-        "includeInSearch": false,
-        "sortOrder": 5,
-        "sortDirection": true,
-        "displayOrder": 5
-    }, {
-        "fieldName": "String Field",
-        "isVisible": true,
-        "includeInSearch": false,
-        "sortOrder": 6,
-        "sortDirection": true,
-        "displayOrder": 6
-    }, {
-        "fieldName": "Date Field",
-        "isVisible": false,
-        "includeInSearch": false,
-        "sortOrder": 7,
-        "sortDirection": true,
-        "displayOrder": 7
-    }];
+    var incomingData = {
+        layoutName: "UserColumnInfo",
+        resultPerPage: 20,
+        defaultReport: "accountDetailReport",
+        isShared: true,
+        isDefault: false,
+        columnData: [{
+            "fieldName": "Test Field",
+            "isVisible": true,
+            "includeInSearch": true,
+            "sortOrder": 1,
+            "sortDirection": "0",
+            "displayOrder": 1,
+            "textAlignment": "center"
+        }, {
+            "fieldName": "Custom Field",
+            "isVisible": true,
+            "includeInSearch": true,
+            "sortOrder": 2,
+            "sortDirection": "1",
+            "displayOrder": 2,
+            "textAlignment": "left"
+        }, {
+            "fieldName": "Other Field",
+            "isVisible": false,
+            "includeInSearch": true,
+            "sortOrder": 3,
+            "sortDirection": "1",
+            "displayOrder": 3,
+            "textAlignment": "right"
+        }, {
+            "fieldName": "Data Field",
+            "isVisible": false,
+            "includeInSearch": false,
+            "sortOrder": 4,
+            "sortDirection": "1",
+            "displayOrder": 4,
+            "textAlignment": "left"
+        }, {
+            "fieldName": "Number Field",
+            "isVisible": true,
+            "includeInSearch": false,
+            "sortOrder": 5,
+            "sortDirection": "1",
+            "displayOrder": 5,
+            "textAlignment": "center"
+        }, {
+            "fieldName": "String Field",
+            "isVisible": true,
+            "includeInSearch": false,
+            "sortOrder": 6,
+            "sortDirection": "1",
+            "displayOrder": 6,
+            "textAlignment": "right"
+        }, {
+            "fieldName": "Date Field",
+            "isVisible": false,
+            "includeInSearch": false,
+            "sortOrder": 7,
+            "sortDirection": "0",
+            "displayOrder": 7,
+            "textAlignment": "left"
+        }]
+    };
 
-    for(let i=0; i<incomingData.length; i++) {
-        incomingData[i].isSelected = false;
-        if(incomingData[i].isVisible == true) {
-            $scope.availableArray.push(incomingData[i]); 
+    $scope.layoutName = incomingData.layoutName;
+    $scope.resultPerPage = incomingData.resultPerPage;
+    $scope.defaultReport = incomingData.defaultReport;
+    $scope.isShared = incomingData.isShared;
+    $scope.isDefault = incomingData.isDefault;
+
+    for(let i=0; i<incomingData.columnData.length; i++) {
+        incomingData.columnData[i].isSelected = false;
+        if(incomingData.columnData[i].isVisible == true) {
+            $scope.availableArray.push(incomingData.columnData[i]); 
         }
         else {
-            $scope.requiredArray.push(incomingData[i])
+            $scope.requiredArray.push(incomingData.columnData[i])
         }
     }
 
@@ -75,6 +102,7 @@ testModule.controller("testController", function($scope, $http) {
         }
         
         refData.isSelected = true;
+        $scope.selectedColumnInfo = refData;
     }
 
     $scope.moveColumnToRequired = function() {
@@ -121,5 +149,13 @@ testModule.controller("testController", function($scope, $http) {
         }
         $scope.requiredArray = [];
         
+    }
+
+    $scope.moveColumnsUp = function() {
+        alert("Move Up");
+    }
+
+    $scope.moveColumnsDown = function() {
+        alert("Move Down");
     }
 });

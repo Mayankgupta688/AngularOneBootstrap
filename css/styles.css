@@ -122,3 +122,7 @@ body {
 .selectedColumn {
     background-color: red !important;
 }
+
+.required_column_details div.selectedColumn:hover, .available_column_details div.selectedColumn:hover {
+    background-color: red !important;
+}
