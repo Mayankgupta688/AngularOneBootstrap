@@ -67,7 +67,7 @@ testModule.controller("testController", function($scope, $http) {
             "displayOrder": 6,
             "textAlignment": "right"
         }, {
-            "fieldName": "Date Field",
+            "fieldName": "None Field",
             "isVisible": false,
             "includeInSearch": false,
             "sortOrder": 7,
@@ -152,11 +152,34 @@ testModule.controller("testController", function($scope, $http) {
     }
 
     $scope.moveColumnsUp = function() {
-        alert("Move Up");
+
+        var indexValue = -1;
+        for(let i=0;i<$scope.requiredArray.length; i++) {
+            if($scope.requiredArray[i].isSelected == true) {
+                indexValue = i;
+                break;
+            }
+        }
+
+        if(indexValue > 0) {
+            var objectValue = $scope.requiredArray.splice(indexValue, 1);
+            $scope.requiredArray.splice(indexValue - 1, 0, objectValue[0] );
+        }
     }
 
     $scope.moveColumnsDown = function() {
-        alert("Move Down");
+        var indexValue = -1;
+        for(let i=0;i<$scope.requiredArray.length; i++) {
+            if($scope.requiredArray[i].isSelected == true) {
+                indexValue = i;
+                break;
+            }
+        }
+
+        if(indexValue > -1 && ((indexValue - 1) < $scope.requiredArray.length)) {
+            var objectValue = $scope.requiredArray.splice(indexValue, 1);
+            $scope.requiredArray.splice(indexValue + 1, 0, objectValue[0] );
+        }
     }
 
     $scope.saveJsonData = function() {

@@ -4,7 +4,7 @@
 
 .column_configurator {
     width: 800px;
-    border: 1px solid red;
+    border: 2px solid black;
     margin: auto;
     padding: 20px;
 }
@@ -57,7 +57,7 @@
 .required_column_details, .available_column_details {
     width: 180px;
     height: 250px;
-    border: 1px solid red;
+    border: 1px solid black;
     overflow-y: auto;
     overflow-x: hidden;
 }
